@@ -4,7 +4,7 @@ import ChatInput from './ChatInput';
 import SuggestedQuestions from './SuggestedQuestions';
 import './App.css';
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://YOUR_API_URL/chat';
+const API_URL = import.meta.env.VITE_API_URL || 'https://jo99t24vj9.execute-api.us-west-2.amazonaws.com/chat';
 
 function App() {
   const [messages, setMessages] = useState([]);
