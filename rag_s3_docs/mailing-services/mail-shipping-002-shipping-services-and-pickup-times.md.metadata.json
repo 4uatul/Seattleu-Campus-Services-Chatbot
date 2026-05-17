@@ -1,0 +1,32 @@
+{
+  "metadataAttributes": {
+    "section": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "Mailing Services"
+      },
+      "includeForEmbedding": true
+    },
+    "title": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "Shipping Services and Pickup Times"
+      },
+      "includeForEmbedding": true
+    },
+    "source_url": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "https://redhawks.sharepoint.com/sites/Intranet-CampusServices/SitePages/ShippingServices.aspx"
+      },
+      "includeForEmbedding": false
+    },
+    "tags": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "shipping, USPS, FedEx, UPS, pickup, perishable"
+      },
+      "includeForEmbedding": true
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "metadataAttributes": {
+    "section": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "Academic Safety"
+      },
+      "includeForEmbedding": true
+    },
+    "document_type": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "faq"
+      },
+      "includeForEmbedding": true
+    }
+  }
+}

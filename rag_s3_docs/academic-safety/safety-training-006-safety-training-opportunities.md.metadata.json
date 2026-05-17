@@ -1,0 +1,32 @@
+{
+  "metadataAttributes": {
+    "section": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "Academic Safety"
+      },
+      "includeForEmbedding": true
+    },
+    "title": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "Safety Training Opportunities"
+      },
+      "includeForEmbedding": true
+    },
+    "source_url": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "https://redhawks.sharepoint.com/sites/Intranet-CampusServices/SitePages/TrainingOpportunities.aspx"
+      },
+      "includeForEmbedding": false
+    },
+    "tags": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "safety, training, biosafety, PPE, EngageSU"
+      },
+      "includeForEmbedding": true
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "metadataAttributes": {
+    "section": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "Mailing Services"
+      },
+      "includeForEmbedding": true
+    },
+    "title": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "Mailing Services Overview"
+      },
+      "includeForEmbedding": true
+    },
+    "source_url": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "https://redhawks.sharepoint.com/sites/Intranet-CampusServices/SitePages/MailingServices.aspx"
+      },
+      "includeForEmbedding": false
+    },
+    "tags": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "mail, mailing, shipping, USPS, FedEx, UPS"
+      },
+      "includeForEmbedding": true
+    }
+  }
+}

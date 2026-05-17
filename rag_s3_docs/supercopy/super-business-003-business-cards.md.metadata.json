@@ -1,0 +1,32 @@
+{
+  "metadataAttributes": {
+    "section": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "Supercopy"
+      },
+      "includeForEmbedding": true
+    },
+    "title": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "Business Cards"
+      },
+      "includeForEmbedding": true
+    },
+    "source_url": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "https://redhawks.sharepoint.com/sites/Intranet-CampusServices/SitePages/BusinessCards.aspx"
+      },
+      "includeForEmbedding": false
+    },
+    "tags": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "business cards, Supercopy, students"
+      },
+      "includeForEmbedding": true
+    }
+  }
+}

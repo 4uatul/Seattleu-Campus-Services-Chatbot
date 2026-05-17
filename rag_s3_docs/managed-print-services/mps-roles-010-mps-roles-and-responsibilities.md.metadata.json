@@ -1,0 +1,32 @@
+{
+  "metadataAttributes": {
+    "section": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "Managed Print Services"
+      },
+      "includeForEmbedding": true
+    },
+    "title": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "MPS Roles and Responsibilities"
+      },
+      "includeForEmbedding": true
+    },
+    "source_url": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "https://redhawks.sharepoint.com/sites/Intranet-CampusServices/SitePages/Roles-and-Responsibilities.aspx"
+      },
+      "includeForEmbedding": false
+    },
+    "tags": {
+      "value": {
+        "type": "STRING",
+        "stringValue": "MPS, roles, Copiers Northwest, ITS, responsibility"
+      },
+      "includeForEmbedding": true
+    }
+  }
+}

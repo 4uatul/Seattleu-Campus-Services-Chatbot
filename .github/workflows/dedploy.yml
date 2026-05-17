@@ -1,0 +1,63 @@
+# This file tells GitHub: "When code is pushed to main, run these steps automatically."
+# It lives at .github/workflows/deploy.yml in your repo.
+# GitHub looks for YAML files in this exact folder to find workflow definitions.
+
+name: Deploy SeattleU Campus Services chatbot
+
+# WHEN to run this workflow
+# "on push to main" means: every time you push code to the main branch, this runs.
+# You could also trigger on pull requests, schedules, or manual button clicks.
+on:
+  push:
+    branches: [main]
+
+# WHAT to run
+# Jobs run in parallel by default. We have two: frontend and backend.
+# Each job gets its own fresh Linux server (called a "runner") provided by GitHub for free.
+jobs:
+
+  # ============================================================
+  # JOB 1: Build and deploy the React frontend to S3 + CloudFront
+  # ============================================================
+  deploy-frontend:
+    runs-on: ubuntu-latest    # GitHub gives us a fresh Ubuntu machine
+
+    steps:
+      # Step 1: Download your code onto the runner
+      # Without this, the runner is an empty machine with no code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Install Node.js (needed for npm run build)
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Step 3: Install dependencies (react, react-router-dom, etc.)
+      - name: Install dependencies
+        run: cd campus-chat && npm install
+
+      # Step 4: Build the React app (creates the dist/ folder)
+      # The .env.production file in your repo sets VITE_API_URL=
+      - name: Build
+        run: cd campus-chat && npx vite build
+
+      # Step 5: Give the runner AWS credentials so it can upload to S3
+      # The secrets come from GitHub Settings → Secrets (you added these in Step 1)
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      # Step 6: Upload built files to S3 (replaces the old files)
+      # --delete removes old files that aren't in the new build
+      - name: Deploy to S3
+        run: aws s3 sync campus-chat/dist/ s3://seattleu-chatbot-frontend- --delete
+
+      # Step 7: Tell CloudFront to stop serving cached old files
+      # Without this, users might see the old version for up to 24 hours
+      - name: Invalidate CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id ELZUZDJ9JS9HV --paths "/*"
