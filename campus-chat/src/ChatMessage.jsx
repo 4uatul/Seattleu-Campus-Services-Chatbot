@@ -1,4 +1,16 @@
+import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+
+function BotAvatar() {
+  const [imgOk, setImgOk] = useState(true);
+  return imgOk ? (
+    <div className="avatar bot-avatar">
+      <img src="/logo.png" alt="" onError={() => setImgOk(false)} />
+    </div>
+  ) : (
+    <div className="bot-avatar-fallback">SU</div>
+  );
+}
 
 function ChatMessage({ message }) {
   const { role, text, citations } = message;
@@ -6,7 +18,8 @@ function ChatMessage({ message }) {
 
   return (
     <div className={`message ${isBot ? 'bot' : 'user'}`}>
-      {isBot && <div className="avatar">SU</div>}
+      {isBot && <BotAvatar />}
+
       <div className="bubble-wrapper">
         <div className="bubble">
           {isBot ? (
@@ -17,6 +30,7 @@ function ChatMessage({ message }) {
             text
           )}
         </div>
+
         {isBot && citations && citations.length > 0 && (
           <div className="citations">
             <span className="citations-label">Sources:</span>
@@ -28,6 +42,7 @@ function ChatMessage({ message }) {
           </div>
         )}
       </div>
+
       {!isBot && <div className="avatar user-avatar">You</div>}
     </div>
   );
