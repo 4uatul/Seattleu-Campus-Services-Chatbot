@@ -2,7 +2,6 @@
 
 A serverless AI chatbot that answers Seattle University students' questions about campus services — parking, printing, mailing, ID cards, transit, and more — using Retrieval-Augmented Generation (RAG) over official campus documentation.
 
-**Live demo:** [suchatbot.atulbhardwaj.com](https://suchatbot.atulbhardwaj.com)
 
 ![Architecture diagram](./SeattleU%20RAG%20chatbot%20architecture%20diagram.png)
 
